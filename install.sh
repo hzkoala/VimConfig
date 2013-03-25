@@ -1,5 +1,5 @@
 #!/bin/bash
-
+chsh -s /bin/bash
 cp -rf vim ~/.vim
 who=$(whoami)
 cd
