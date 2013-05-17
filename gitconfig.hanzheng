@@ -1,0 +1,9 @@
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = gbk
+[gui]
+	encoding = utf-8
+[core]
+	editor = vim
+[color]
+	ui = always
