@@ -62,7 +62,7 @@ set incsearch					        " 动态匹配查找的字符
 set ruler					            " 在Vim窗口的右下角显示当前光标位置
 set hlsearch					        " 高亮显示匹配的字符；临时关闭用:set nohlsearch
 if exists("tags")				        " 启动vim时，如果存在tags则自动加载
-set tags=./tags
+set tags=tags
 endif
 set backspace=2					        " insert模式下无法使用backspace
 set guioptions=t            			" 隐藏菜单栏、工具栏、滚动条
@@ -95,7 +95,7 @@ set t_Co=256
 "===================================================================================
 "" Taglist & Ctags
 "===================================================================================
-let Tlist_Auto_Open = 1                 "自动打开taglist窗口
+"let Tlist_Auto_Open = 1                 "自动打开taglist窗口
 let Tlist_Inc_Winwidth = 0
 let Tlist_Ctags_Cmd="/usr/bin/ctags"
 let Tlist_Show_One_File = 1             "不同时显示多个文件的tag，只显示当前文件的
@@ -167,7 +167,7 @@ colorscheme molokai                     " 配色方案
 "===================================================================================
 map <F6> :NERDTreeToggle<CR>
 imap <F6> <ESC>:NERDTreeToggle<CR>
-autocmd VimEnter * NERDTree             "启动Vim时自动打开nerdtree
+"autocmd VimEnter * NERDTree             "启动Vim时自动打开nerdtree
 let NERDTreeIgnore=['^cscope', '^tags$']
 
 "===================================================================================
