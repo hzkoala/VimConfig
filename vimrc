@@ -16,7 +16,7 @@
 "===================================================================================
 filetype plugin on				        " 自动检测文件类型并加载相应的设置
 filetype indent on				        " 自动检测文件类型并加载相应的设置
-set helplang=cn
+set helplang=cn                         " 使用中文帮助文档
 set autoread                    		" 默认自动加载已经修改的文件
 set autowrite                   		" vim使用tag进行切换时,修改的文件被自动保存
 set wildignore=*.bak,*.o,*.e,*~ 		" 忽略这些文件扩展名
