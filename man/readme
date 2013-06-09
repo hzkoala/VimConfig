@@ -1,0 +1,9 @@
+cd manpages-zh
+./configure --prefix=/usr/share/zhman --disable-zhtw
+make
+make install
+
+cd
+vi .bashrc
+alias cman='man -M /usr/share/zhman/share/man/zh_CN'
+source .bashrc
