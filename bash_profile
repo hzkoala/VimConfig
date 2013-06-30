@@ -28,9 +28,8 @@ TERM=linux
 export LANG LC_MESSAGES LC_CTYPE EDITOR TERM
 export CLICOLOR=1
 export PATH=/usr/local/bin:$PATH
-
-LC_ALl="zh_CN.GB18030"
-LANG="zh_CN.GB18030"
-LANGUAGE="zh_CN.GB18030:zh_CN.GB2312:zh_CN"
-SUPPORTED="zh_CN.GB18030:zh_CH:zh:en_US.UTF-8:en_US:en"
+export LC_ALL="zh_CN.UTF-8"
+export LANG="zh_CN.UTF-8"
+LANGUAGE="zh_CN.UTF-8"
+SUPPORTED="zh_CN.UTF-8"
 SYSFONT="lat0-sun16"
