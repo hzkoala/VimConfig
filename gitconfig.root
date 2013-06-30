@@ -1,0 +1,12 @@
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = utf-8
+[gui]
+	encoding = utf-8
+[core]
+	editor = vim
+[color]
+	ui = always
+[user]
+	name = HanZheng
+	email = hzkoala@gmail.com
