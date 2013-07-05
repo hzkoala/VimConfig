@@ -19,6 +19,10 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
+if [ -d /sbin ] ; then
+    PATH=/sbin:"${PATH}"
+fi     
+
 PS1="[\w]\\$ "
 #LANG=zh_CN.UTF-8
 #LC_MESSAGES=en_US.UTF-8
