@@ -10,3 +10,5 @@
 [user]
 	name = HanZheng
 	email = hzkoala@gmail.com
+[remote "origin"]
+	url = git@github.com:hzkoala/VimConfig.git
