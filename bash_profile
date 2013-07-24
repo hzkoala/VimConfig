@@ -24,9 +24,6 @@ if [ -d /sbin ] ; then
 fi     
 
 PS1="[\w]\\$ "
-#LANG=zh_CN.UTF-8
-#LC_MESSAGES=en_US.UTF-8
-#LC_CTYPE=zh_CN.GBK
 EDITOR=vim
 TERM=linux
 export LANG LC_MESSAGES LC_CTYPE EDITOR TERM
@@ -37,3 +34,4 @@ export LANG="zh_CN.UTF-8"
 LANGUAGE="zh_CN.UTF-8"
 SUPPORTED="zh_CN.UTF-8"
 SYSFONT="lat0-sun16"
+export LESSCHARSET="UTF-8"
