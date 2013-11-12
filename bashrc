@@ -1,3 +1,31 @@
+# set PATH so it includes user's private bin if it exists
+if [ -d ~/bin ] ; then
+    PATH=~/bin:"${PATH}"
+fi
+
+if [ -d /sbin ] ; then
+    PATH=/sbin:"${PATH}"
+fi
+
+if [ -d /usr/local/bin ] ; then
+    PATH=/usr/local/bin:"${PATH}"
+fi
+
+# set Language
+export LANG LC_MESSAGES LC_CTYPE EDITOR TERM
+export CLICOLOR=1
+export LC_ALL="zh_CN.UTF-8"
+export LANG="zh_CN.UTF-8"
+export LESSCHARSET="UTF-8"
+export LANGUAGE="zh_CN.UTF-8"
+
+# set UI
+PS1="[\w]\\$ "
+EDITOR=vim
+TERM=linux
+SUPPORTED="zh_CN.UTF-8"
+SYSFONT="lat0-sun16"
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
