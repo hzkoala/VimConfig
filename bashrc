@@ -1,4 +1,4 @@
-# set PATH so it includes user's private bin if it exists
+# PATH
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
@@ -11,27 +11,26 @@ if [ -d /usr/local/bin ] ; then
     PATH=/usr/local/bin:"${PATH}"
 fi
 
-# set Language
+
+# LANGUAGE
 export LANG LC_MESSAGES LC_CTYPE EDITOR TERM
-export CLICOLOR=1
 export LC_ALL="zh_CN.UTF-8"
 export LANG="zh_CN.UTF-8"
 export LESSCHARSET="UTF-8"
 export LANGUAGE="zh_CN.UTF-8"
 
-# set UI
+
+# UI
 PS1="[\w]\\$ "
 EDITOR=vim
-TERM=linux
+TERM=xterm
 SUPPORTED="zh_CN.UTF-8"
 SYSFONT="lat0-sun16"
-
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+export CLICOLOR=1
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
@@ -70,11 +69,14 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ]; then
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto'
+fi
 
+
+# Alias
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -83,16 +85,6 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
-
-# enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
-fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
