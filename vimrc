@@ -64,7 +64,7 @@ set hlsearch					        " 高亮显示匹配的字符；临时关闭用:set noh
 if exists("tags")				        " 启动vim时，如果存在tags则自动加载
 set tags=tags
 endif
-set backspace=indent,eol,start		    " insert模式下无法使用backspace
+set backspace=indent,eol,start
 set guioptions=t            			" 隐藏菜单栏、工具栏、滚动条
 set foldmethod=indent                   " 代码折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
