@@ -1,19 +1,4 @@
-"/////////////////////////////////////////////////////////////////////////////////
-"//         FILE:  .vimrc							                            //
-"//  DESCRIPTION:  suggestion for a personal configuration file ~/.vimrc	    //
-"//       AUTHOR:  zhoulh							                            //
-"//      CREATED:  2012-10-01						                            //
-"/////////////////////////////////////////////////////////////////////////////////
-
-" sudo apt-get install build-essential python python-dev vim ctags vim-doc
-" lrzsz
-" sudo apt-get install vim-scripts pylint cscope splint git-core zip unzip
-" libmysqlclient-dev
-" wget https://github.com/cburroughs/pep8.pylint
-
-"===================================================================================
-" 基本配置
-"===================================================================================
+" =====基本配置======
 filetype plugin on				        " 自动检测文件类型并加载相应的设置
 filetype indent on				        " 自动检测文件类型并加载相应的设置
 set helplang=cn                         " 使用中文帮助文档
@@ -70,7 +55,10 @@ set foldmethod=indent                   " 代码折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 set wildmenu 					        " 自动补全命令时候使用菜单式匹配列表
 set history=400					        " vim记住的历史操作的数量，默认的是20
-" 括号自动补全
+set t_Co=256
+
+
+" =====括号自动补全=====
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
 :inoremap { {}<ESC>i
@@ -79,6 +67,7 @@ set history=400					        " vim记住的历史操作的数量，默认的是20
 :inoremap ] <c-r>=ClosePair(']')<CR>
 :inoremap < <><ESC>i
 :inoremap > <c-r>=ClosePair('>')<CR>
+
 function ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
         return "\<Right>"
@@ -86,15 +75,13 @@ function ClosePair(char)
         return a:char
     endif
 endf
-set t_Co=256
-"===================================================================================
-" word_complete.vim : automatically offers word completion as you type 
-"===================================================================================
+
+
+" =====插件配置=====
+" @word_complete.vim : automatically offers word completion as you type 
 ":autocmd BufEnter * call DoWordComplete() 
 
-"===================================================================================
-"" Taglist & Ctags
-"===================================================================================
+" @Taglist & Ctags
 "let Tlist_Auto_Open = 1                 "自动打开taglist窗口
 let Tlist_Inc_Winwidth = 0
 let Tlist_Ctags_Cmd="/usr/bin/ctags"
@@ -105,80 +92,51 @@ let Tlist_Use_Right_Window = 1          "在右侧窗口中显示taglist窗口
 map <F7> :TlistToggle<CR>
 imap <F7> <ESC>:TlistToggle<CR>
 
-"===================================================================================
-" minibufexpl.vim : Elegant buffer explorer - takes very little screen space 
-"===================================================================================
-"let g:miniBufExplMapWindowNavVim = 1 
-"let g:miniBufExplMapWindowNavArrows = 1 
-"let g:miniBufExplMapCTabSwitchBufs = 1 
-"let g:miniBufExplModSelTarget = 1 
-
-"===================================================================================
-" a.vim : Alternate Files quickly (.c --> .h etc) 
-"===================================================================================
-"用gvim打开源码文件后，按F12即可以在c/h文件中切换，也可以通过输入:A实现。
+" @a.vim : Alternate Files quickly (.c --> .h etc) 
+" 用gvim打开源码文件后，按F12即可以在c/h文件中切换，也可以通过输入:A实现。
 nnoremap <silent> <F12> :A<CR>
 ":A 在新Buffer中切换到c\h文件
 ":AS 横向分割窗口并打开c\h文件
 ":AV 纵向分割窗口并打开c\h文件
 ":AT 新建一个标签页并打开c\h文件
 
-"===================================================================================
-" grep.vim : Grep search tools integration with Vim 
-"===================================================================================
-"用gvim打开源码文件，并将光标定位到要查找的内容上，按下F3，确定要查找的内容
-"和搜索范围，gvim会在弹出的QuickFix窗口中列出所有符合条件的搜索结果
+" @grep.vim : Grep search tools integration with Vim 
+" ~用gvim打开源码文件，并将光标定位到要查找的内容上，按下F3，确定要查找的内容和搜索范围，gvim会在弹出的QuickFix窗口中列出所有符合条件的搜索结果
 nnoremap <silent> <F3> :Grep<CR>
-"Grep在当前目录下面查找字符串
+" ~Grep在当前目录下面查找字符串(find_str是你需要查找的对象，*是当前目录下面所有的文件类型)
 ":Grep find_str *
-"find_str是你需要查找的对象，*是当前目录下面所有的文件类型
-"Grep查找当前目录和子目录中的字符串
+" ~Grep查找当前目录和子目录中的字符串(递规查询子目录)
 ":Grep -R find_str *
-"跟上面的一样，不过多了一个-R参数，意为递规查询子目录。
 
-"===================================================================================
-" The NERD Commenter : A plugin that allows for easy commenting of code for
-" many filetypes. 
-"===================================================================================
+" @The NERD Commenter : A plugin that allows for easy commenting of code for many filetypes. 
+" Normal模式下，几乎所有命令前面都可以指定行数
+" Visual模式下执行命令，会对选中的特定区块进注释/反注释
+" ca，在可选的注释方式之间切换，比如C/C++ 的块注释/* */和行注释//
+" cc，注释当前行
+" c，切换注释/非注释状态
+" cs，以”性感”的方式注释
+" cA，在当前行尾添加注释符，并进入Insert模式
+" cu，取消注释
 "let mapleader=","
-"ca，在可选的注释方式之间切换，比如C/C++ 的块注释/* */和行注释//
-"cc，注释当前行
-"c，切换注释/非注释状态
-"cs，以”性感”的方式注释
-"cA，在当前行尾添加注释符，并进入Insert模式
-"cu，取消注释
-"Normal模式下，几乎所有命令前面都可以指定行数
-"Visual模式下执行命令，会对选中的特定区块进注释/反注释
 
-"===================================================================================
-" Pydiction : Tab-complete your Python code
-"===================================================================================
-"pydiction 1.2 python auto complete
+
+" @Pydiction : Tab-complete your Python code
+" pydiction 1.2 python auto complete
 let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'
 
-"===================================================================================
-" molokai : A port of the monokai scheme for TextMate 
-"===================================================================================
+" @molokai : A port of the monokai scheme for TextMate 
 let g:molokai_original = 1
-colorscheme molokai                     " 配色方案
+colorscheme molokai
 
-"===================================================================================
-" The NERD tree : A tree explorer plugin for navigating the filesystem 
-"===================================================================================
+" @The NERD tree : A tree explorer plugin for navigating the filesystem 
 map <F6> :NERDTreeToggle<CR>
 imap <F6> <ESC>:NERDTreeToggle<CR>
 "autocmd VimEnter * NERDTree             "启动Vim时自动打开nerdtree
 let NERDTreeIgnore=['^cscope', '^tags$']
 
-"===================================================================================
-" SuperTab : Do all your insert-mode completion with Tab. 
-"===================================================================================
-"1. Download supertab.vmb to any directory. 
-"2. Open the file in vim ($ vim supertab.vmb). 
+" @SuperTab : Do all your insert-mode completion with Tab. 
 
-"===================================================================================
-" bufexplorer.zip : Buffer Explorer / Browser 
-"===================================================================================
+" @bufexplorer.zip : Buffer Explorer / Browser 
 let g:bufExplorerDefaultHelp=0              " Do not show default help. 
 let g:bufExplorerShowRelativePath=1         " Show relative paths. 
 let g:bufExplorerSortBy='mru'               " Sort by most recently used. 
@@ -189,9 +147,7 @@ let g:bufExplorerUseCurrentWindow=1         " Open in new window.
 autocmd BufWinEnter \[Buf\ List\] setl nonumber
 map <F9> :BufExplorer<CR>
 
-"===================================================================================
-" Cscope
-"===================================================================================
+" @Cscope
 set cscopequickfix=s-,c-,d-,i-,t-,e-       "是否使用 quickfix 窗口来显示 cscope 结果
 if has("cscope")
    set csprg=/usr/bin/cscope                "指定用来执行 cscope 的命令
@@ -204,7 +160,9 @@ if has("cscope")
    endif
    set csverb                               "显示添加成功与否
 endif
-" 快捷键
+
+
+" =====快捷键=====
 nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
@@ -213,23 +171,3 @@ nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-" 生成索引
-"cd /usr/local/bin
-"vi .codeindex
-"#!/bin/sh
-"find . -name "*.h" -o -name "*.php" -o -name "*.c" -o -name "*.cc" -o -name "*.py" -o -name "*.cpp" > cscope.files
-"cscope -bkq -i cscope.files
-"ctags -R
-"chmod a+x codeindex
-
-"===================================================================================
-" pylint.vim : compiler plugin for python style checking tool 
-"===================================================================================
-autocmd FileType python compiler pylint
-let g:pylint_onwrite = 0
-map <F10> :Pylint<CR>
-
-"===================================================================================
-"neocomplcache
-"===================================================================================
-let g:neocomplcache_enable_at_startup=1 
