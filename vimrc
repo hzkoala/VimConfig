@@ -160,9 +160,7 @@ if has("cscope")
    endif
    set csverb                               "显示添加成功与否
 endif
-
-
-" =====快捷键=====
+" ~Cscope快捷键
 nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
