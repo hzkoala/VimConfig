@@ -5,8 +5,9 @@
 	encoding = utf-8
 [core]
 	editor = vim
+    pager = less -x4
 [color]
 	ui = always
 [user]
 	name = hanzheng 
-	email = hanzheng@gmail.com
+	email = hzkoal@gmail.com

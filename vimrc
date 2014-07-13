@@ -12,7 +12,7 @@ set equalalways             			" 分割窗口时保持相等的宽/高
 set nobackup					        " 不产生备份文件
 set nocompatible				        " 去掉有关vi一致性模式，避免以前版本的一些bug和局限
 set noswapfile              			" 编辑时不产生交换文件
-set noexpandtab             			" 插入 tab 符号不以空格替换
+"set noexpandtab             			" 插入 tab 符号不以空格替换
 set history=1000				        " 设置冒号命令和搜索命令的命令历史列表的长度
 set autoindent					        " 设置自动缩进：即每行的缩进值与上一行相等，使用 noautoindent 取消设置
 set smartindent					        " 依据上面的格式，智能的选择对齐方式，对于类似C语言编写很有用处
@@ -24,7 +24,6 @@ set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 set fileencodings=utf-8,cp936,big5,euc-jp,euc-kr,latin1,ucs-bom,gbk
 set ambiwidth=double
 set showcmd					            " 输入的命令显示出来，看的清楚些。
-set enc=utf-8
 set ignorecase					        " 大小写无关匹配
 set smartcase					        " 只能匹配，即小写全匹配，大小写混合则严格匹配
 set langmenu=zh_CN.UTF-8			    " 语言设置
