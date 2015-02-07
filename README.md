@@ -1,5 +1,8 @@
-使用方法:
+## 使用方法
+
+```BASH
 cd ~
-mkdir .rc
+git clone {GIT_REP} .rc
 cd .rc
-git pull origin master:master
+sh install.sh
+```
