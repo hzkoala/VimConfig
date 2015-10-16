@@ -14,17 +14,17 @@ fi
 
 # LANGUAGE
 export LANG LC_MESSAGES LC_CTYPE EDITOR TERM
-export LC_ALL="zh_CN.UTF-8"
-export LANG="zh_CN.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 export LESSCHARSET="UTF-8"
-export LANGUAGE="zh_CN.UTF-8"
+export LANGUAGE="en_US.UTF-8"
 
 
 # UI
 PS1="[\w]\\$ "
 EDITOR=vim
 TERM=xterm
-SUPPORTED="zh_CN.UTF-8"
+SUPPORTED="en_US.UTF-8"
 SYSFONT="lat0-sun16"
 export CLICOLOR=1
 
