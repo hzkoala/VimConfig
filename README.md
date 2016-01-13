@@ -2,7 +2,7 @@
 
 ```BASH
 cd ~
-git clone {GIT_REP} .rc
+git clone git@github.com:hzkoala/VimConfig.git .rc
 cd .rc
 sh install.sh
 ```
