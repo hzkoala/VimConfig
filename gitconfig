@@ -11,3 +11,5 @@
 [user]
 	name = hanzheng
 	email = hzkoala@gmail.com
+[push]
+	default = simple
